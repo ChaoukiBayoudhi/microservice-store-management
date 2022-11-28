@@ -10,6 +10,8 @@ import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/products")
+@CrossOrigin(origins = "http://localhost:4200")
+//@CrossOrigin(origins = {"http://localhost:4200","http://localhost:3000","http://localhost:8080"})
 public class ProductController {
 
     private ProductService service;
@@ -17,7 +19,7 @@ public class ProductController {
     public ProductController(ProductService service) {
         this.service = service;
     }
-
+ //url: http://localhost:8080/products/all
     @GetMapping("/all")
     //or
     //@RequestMapping(value = "/all", method = RequestMethod.GET)
